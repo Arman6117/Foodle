@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        JanoSans: ["Jano Sans Pro", "cursive"],
+        JanoSans: [ 'Poppins','cursive'],
       },
       backgroundColor:{
         lightRed:'#fff0e9',
@@ -22,5 +22,7 @@ module.exports = {
     },
   },
 
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar')
+  ],
 };

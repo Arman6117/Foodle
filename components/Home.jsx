@@ -5,11 +5,11 @@ import { TbArrowLoopRight, TbShoppingBag } from "react-icons/tb/index.esm";
 const Home = () => {
   return (
     <div className="">
-      <div className="pt-2  px-7 md:px-14 font-JanoSans flex flex-col gap-12 ">
+      <div className="pt-2  px-7 md:px-14 font-baloo flex flex-col gap-12 ">
         {/* <div className="h-15 w-15 bg-black" /> */}
         <span className="  " />
 
-        <h1 className="text-red pseudo z-10  font-bold text-3xl  md:text-5xl pointer-events-none">
+        <h1 className="text-red pseudo z-10   font-bold text-3xl  md:text-5xl pointer-events-none">
           All Fast Food is <br /> Available At Foodle
         </h1>
         <p className=" text-gray-600 text-sm bottom-[18rem] flex gap-3">

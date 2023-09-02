@@ -1,16 +1,28 @@
-
-@import url('https://fonts.cdnfonts.com/css/jano-sans-pro');
+/* @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base{
-    body{
+    body{        
         @apply overflow-x-hidden
     }
 }
 @layer components{
     .icon{
         @apply   text-black  h-7 w-7 p-1  rounded-full bg-yellowPrimary
+    }
+    .categoryText{
+        @apply font-bold  text-2xl md:text-3xl
+    }
+    .categoryTextLink{
+        @apply mt-6 flex gap-3 text-red font-semibold text-sm
+    }
+    .categoryTextLinkArrow{
+        @apply h-5 group-hover:ml-1 transition-all ease-in-out
+    }
+    .footerText{
+        @apply text-[#fff0e9] font-black text-3xl
     }
 }

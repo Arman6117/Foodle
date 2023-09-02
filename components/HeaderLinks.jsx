@@ -3,10 +3,10 @@ import React from "react";
 
 const HeaderLinks = ({ path, link }) => {
   return (
-    <div className="flex group   ">
-      <span className="h-[3px] rounded w-0 bg-redPrimary group-hover:w-5 transition-all ease-in-out hidden sm:inline mt-[21px] absolute " />
+    <div className="flex group  hidden sm:inline ">
+      <span className="h-[3px] rounded w-0 bg-redPrimary group-hover:w-5 transition-all ease-in-out  mt-[21px] absolute " />
       <Link
-        className="text-black/60 z-10 font-semibold group-hover:text-black hidden sm:inline"
+        className="text-black/60 z-10 font-semibold group-hover:text-black "
         href={path}
       >
         {link}

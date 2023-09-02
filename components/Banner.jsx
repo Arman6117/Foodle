@@ -3,9 +3,9 @@ import BannerContent from "./BannerContent";
 import { ClockIcon, PaperAirplaneIcon } from "@heroicons/react/outline";
 const Banner = () => {
   return (
-    <div className=" md:pl-16 pl-0 justify-between flex-1 -mt-16 flex md:w-[90%]  font-JanoSans bg-white mx-auto shadow-2xl rounded-3xl ">
-      <div className=" flex gap-10 justify-between flex-1 items-center pt-2 ">
-        <div className="flex pt-5">
+    <div className=" md:pl-16 pl-4 justify-between flex-1 -mt-16 flex w-[90%]   font-baloo bg-white mx-auto shadow-2xl rounded-3xl ">
+      <div className=" flex gap-3 sm:gap-10 flex-col sm:flex-row justify-between flex-1 items-center pt-2 ">
+        <div className="flex pt-2 sm:pt-5">
           {/* <ClockIcon className="h-14  mt-5  p-3 text-black/70 bg-yellowPrimary rounded-full" /> */}
           <BannerContent
             title={"  Fast Delivery"}

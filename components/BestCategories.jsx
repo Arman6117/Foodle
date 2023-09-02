@@ -7,10 +7,12 @@ import BgGreen from "../public/assets/BgRecGreen.png";
 import BgYellow from "../public/assets/BgRecYellow.png";
 import BgRed from "../public/assets/BgRecRed.png";
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowNarrowRightIcon, ArrowRightIcon } from "@heroicons/react/outline";
 const BestCategories = () => {
   return (
-    <div className="px-7 mt-28 md:mt-32 h-screen">
-      <div className=" font-JanoSans md:flex md:justify-between md:space-x-8">
+    <div className="px-7 ml-7 mt-28 md:mt-32 h-screen">
+      <div className=" font-baloo md:flex md:justify-between md:space-x-8">
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold pb-7 ">
           Best <span className="text-red">Delivered</span>
           <br />
@@ -23,53 +25,65 @@ const BestCategories = () => {
         </p>
       </div>
       <div>
-        <div>
-          <div className="mt-10 sm:flex sm:justify-end">
+        <div className="p-3 text-black">
+          <div className="mt-10 flex flex-col md:flex-row">
             <div>
-            <div className="flex flex-col  items-center">
+              <div className="flex flex-col  items-center">
+                <Image
+                  src={Burger}
+                  alt=""
+                  className="md:h-96 h-80  object-contain"
+                />
+                <h1 className="categoryText">Burgers</h1>
+                <Link href="" className="categoryTextLink group">
+                  Order Now{" "}
+                  <ArrowNarrowRightIcon className="categoryTextLinkArrow" />
+                </Link>
+              </div>
 
-              <Image src={Burger} alt="" className="sm:h-96  object-contain" />
-<h1 className="relative">Burgers</h1>
-            </div>
               <Image
                 src={BgGreen}
                 alt=""
-                className="relative bottom-80 sm:bottom-72 -z-10 h-60 sm:h-44 object-contain"
+                className="relative sm:ml-16  md:ml-0 md:bottom-[22rem]  bottom-[20rem] sm:bottom-[20rem] -z-10 h-40 sm:h-44 object-contain"
               />
             </div>
-            <div className="w-screen">
-            <div className="flex flex-col  items-center">
-
-              <Image
-                src={Pizza}
-                alt=""
-                className="sm:h-96 sm:w-96 object-contain"
-              />
-              <h1>Pizza</h1>
-            </div>
+            <div className="w-screen mr-1 relative -left-10 md:static">
+              <div className="flex flex-col  items-center justify-center">
+                <Image
+                  src={Pizza}
+                  alt=""
+                  className="md:h-96 h-80  object-contain"
+                />
+                <h1 className="categoryText">Pizza</h1>
+                <Link href="" className="categoryTextLink group">
+                  Order Now{" "}
+                  <ArrowNarrowRightIcon className="categoryTextLinkArrow" />
+                </Link>
+              </div>
 
               <Image
                 src={BgYellow}
                 alt=""
-                className="relative bottom-96 sm:bottom-72 -z-10 h-60 sm:h-44 object-contain"
+                className="relative sm:ml-28  md:ml-0 md:bottom-[22rem]   bottom-80 sm:bottom-80 -z-10 h-44 object-contain"
               />
             </div>
-            <div >
-            <div className="flex flex-col  items-center">
-
-              <Image src={Fries} alt="" className="sm:h-96  object-contain" />
-                <h1>French Fries</h1>
-            </div>
+            <div className="ml-16 sm:ml-0 ">
+              <div className="flex flex-col items-center">
+                <Image src={Fries} alt="" className="md:h-96 h-80 object-contain" />
+                <h1 className="categoryText">French Fries</h1>
+                <Link href="" className="categoryTextLink group">
+                  Order Now{" "}
+                  <ArrowNarrowRightIcon className="categoryTextLinkArrow" />
+                </Link>
+              </div>
 
               <>
                 <Image
                   src={BgRed}
                   alt=""
-                  className="relative bottom-80 sm:bottom-72 -z-10 h-60 sm:h-52 object-contain"
+                  className="relative sm:ml-16  bottom-80 md:ml-0 md:bottom-[22rem]  -z-10 h-52 object-contain"
                 />
-            
               </>
-
             </div>
           </div>
         </div>

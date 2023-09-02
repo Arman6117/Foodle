@@ -19,7 +19,7 @@ const BannerContent = ({ title, text, icon: Icon }) => {
 
         {title}
       </div>
-      <p className="relative md:left-[70px] left-[65px] md:pr-48  text-gray-400 text-[10px] bottom-10 ">
+      <p className="relative md:left-[70px] left-[65px] md:pr-48 pr-48  text-gray-400 text-[10px] bottom-10 ">
         {text}
       </p>
     </div>

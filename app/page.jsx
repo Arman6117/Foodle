@@ -1,15 +1,19 @@
 import Banner from "@/components/Banner";
 import BestCategories from "@/components/BestCategories";
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Home from "@/components/Home";
+import Menu from "@/components/Menu";
 
 import React from "react";
 
 const page = () => {
+  
+ 
   return (
     <main>
       {/* Header */}
-      <section className="h-screen w-full rounded-b-2xl bg-lightRed">
+      <section className="h-screen w-screen rounded-b-2xl bg-lightRed">
         <div className="   ">
           <Header />
           <div>
@@ -19,8 +23,14 @@ const page = () => {
       </section>
       <section>
         <Banner />
-        <BestCategories/>
+        <BestCategories />
       </section>
+      <section className="">
+        <Menu />
+      </section>
+      <footer className="">
+        <Footer />
+      </footer>
     </main>
   );
 };
