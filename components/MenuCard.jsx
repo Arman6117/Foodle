@@ -55,8 +55,8 @@ const MenuCard = ({ foodItem, foodItemPrice }) => {
     }
   };
 
-  const state = useFoodItemStore();
-  const setFoodItemName = useFoodItemStore((state)=>state.setFoodItemName);
+  // const state = useFoodItemStore();
+  // const setFoodItemName = useFoodItemStore((state)=>state.setFoodItemName);
   return (
     <>
       {data === null ? (
@@ -89,9 +89,9 @@ const MenuCard = ({ foodItem, foodItemPrice }) => {
                 <button
                   className="font-semibold text-white mt-4 bg-redPrimary  text-xs rounded-full w-24 h-9"
                   onClick={() => {
-                    // router.push("/buy-now");
-                    setFoodItemName(foodItem)
-                    console.log(state.foodItemName)
+                    // setFoodItemName(foodItem)
+                    router.push(`buy-now/${foodItem}`);
+                    
                   }}
                 >
                   Buy Now
