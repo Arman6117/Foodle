@@ -2,15 +2,23 @@ import React from "react";
 import HeroImage from "../../../public/assets/fast_food_vec.jpg";
 
 import Image from "next/image";
+import useFoodItemStore from "@/utils/store";
+import FoodItemDetail from "@/components/FoodItemDetail";
+
 const page = () => {
   return (
     <div className="bg-lightRed h-screen overflow-hidden  ">
      
       <div className="h-screen  justify-center items-center flex">
       
-        <div className=" h-[80%] z-10 w-[70%] bg-white rounded-md  "></div>
-        <div>
-          <div></div>
+        <div className=" h-[80%] z-10 w-[70%] rounded-md  shadow-2xl flex flex-col sm:flex-row ">
+
+        <div className="w-full sm:w-2/5 h-1/3 sm:h-full bg-redPrimary  rounded-tl-md rounded-bl-md" > {/*Left section*/}
+          <div>
+          <FoodItemDetail/>
+          </div>
+        </div>
+        <div className="h-full w-3/5 bg-white rounded-tr-md  rounded-br-md"></div>
         </div>
       </div>
       <Image

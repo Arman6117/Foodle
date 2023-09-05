@@ -1,10 +1,12 @@
 import { create } from "zustand";
 
 const useFoodItemStore = create((set) => ({
-  foodItemName: "",
+  foodItem: "",
   foodItemId: null,
+  foodName:"",
+  setFoodName: (name) =>set({foodName:name}),
 
-  setFoodItemName: (name) =>set({foodItemName:name}),
+  setFoodItem: (name) =>set({foodItem:name}),
   setFoodItemId:(id) => set({foodItemId:id})
    
 }));
