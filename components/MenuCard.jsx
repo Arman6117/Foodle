@@ -58,6 +58,7 @@ const MenuCard = ({ foodItem, foodItemPrice }) => {
   // const state = useFoodItemStore();
   const setFoodItem = useFoodItemStore((state)=>state.setFoodItem);
   const setFoodName = useFoodItemStore((state)=>state.setFoodName);
+  const setFoodPrice = useFoodItemStore((state)=>state.setFoodPrice);
   return (
     <>
       {data === null ? (
@@ -92,6 +93,7 @@ const MenuCard = ({ foodItem, foodItemPrice }) => {
                   onClick={() => {
                     setFoodItem(data.urls.regular)
                     setFoodName(foodItem)
+                    setFoodPrice(foodItemPrice)
                     router.push(`buy-now/${foodItem}`);
                     
                   }}

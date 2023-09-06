@@ -2,8 +2,9 @@ import React from "react";
 import HeroImage from "../../../public/assets/fast_food_vec.jpg";
 
 import Image from "next/image";
-import useFoodItemStore from "@/utils/store";
+// import useFoodItemStore from "@/utils/store";
 import FoodItemDetail from "@/components/FoodItemDetail";
+
 
 const page = () => {
   return (
@@ -18,7 +19,7 @@ const page = () => {
           <FoodItemDetail/>
           </div>
         </div>
-        <div className="h-full w-3/5 bg-white rounded-tr-md  rounded-br-md"></div>
+        <div className="h-full sm:w-3/5  bg-white rounded-tr-md  rounded-br-md"></div>
         </div>
       </div>
       <Image
