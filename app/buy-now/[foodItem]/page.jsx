@@ -4,6 +4,7 @@ import HeroImage from "../../../public/assets/fast_food_vec.jpg";
 import Image from "next/image";
 // import useFoodItemStore from "@/utils/store";
 import FoodItemDetail from "@/components/FoodItemDetail";
+import ConfirmOrderForm from "@/components/ConfirmOrderForm";
 
 
 const page = () => {
@@ -19,7 +20,9 @@ const page = () => {
           <FoodItemDetail/>
           </div>
         </div>
-        <div className="h-full sm:w-3/5  bg-white rounded-tr-md  rounded-br-md"></div>
+        <div className="h-full sm:w-3/5  bg-white rounded-tr-md  rounded-br-md">
+          <ConfirmOrderForm/>
+        </div>
         </div>
       </div>
       <Image

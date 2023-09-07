@@ -25,4 +25,7 @@
     .footerText{
         @apply text-[#fff0e9] font-black text-3xl
     }
+    .inputs{
+        @apply outline-none w-72 border-yellow-400 border-2 rounded-md p-1  text-sm font-semibold 
+    }
 }
