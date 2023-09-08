@@ -11,7 +11,8 @@ const FoodItemDetail = () => {
   let price = state.foodPrice;
   const originalPrice = price;
   const setPrice = useFoodItemStore((state) => state.setFoodPrice);
-  const [quantity, setQuantity] = useState(1);
+  const setQuantity = useFoodItemStore((state)=>state.setFoodQuantity);
+  const quantity = state.foodQuantity
   const [currentPrice, setCurrentPrice] = useState(originalPrice);
   return (
     <div className="flex flex-col p-4 sm:items-center  sm:text-center  sm:mt-12">
@@ -51,17 +52,17 @@ const FoodItemDetail = () => {
               }}
             />
           </div>
-          {/* <h1>{price}</h1> */}
+       
           <div></div>
         </div>
       </div>
-      <div className="w-[100px] text-center">
-        <h1 className=" sm:hidden ml-2  mt-2 font-bold sm:text-xl text-lg text-white">
+      <div className=" w-[145px] text-center">
+        <h1 className=" sm:hidden   mt-2 font-bold sm:text-xl text-lg text-white">
           {foodName}
         </h1>
       </div>
 
-      <div className=""></div>
+      {/* <div className=""></div> */}
     </div>
   );
 };
