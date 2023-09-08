@@ -20,7 +20,7 @@ const ConfirmOrderForm = () => {
   return (
     <>
     <div className="absolute w-[350px] h-[320px] bg-white transition-all opacity-80">
-     <ReactLoading type='spin' color='red'/>
+     <ReactLoading type='spin' color='red' />
     </div>
     <form onSubmit={handleSubmit}>
       <div className="flex flex-col items-center sm:space-y-10  ">
