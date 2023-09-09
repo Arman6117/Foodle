@@ -1,8 +1,8 @@
 import Order from "@/models/order";
 import { connectDb } from "@/utils/database";
 
-const POST = async (request) => {
-  const { name, add, foodItem, quantity, number, price } = await request.json();
+export const POST = async (request) => {
+  const { name, add, foodItem, quantity, number, price,userId } = await request.json();
 
   try {
     await connectDb();
@@ -14,9 +14,10 @@ const POST = async (request) => {
       quantity,
       number,
       price,
+      userId
     });
     await newOrderItem.save();
-
+  
     return new Response("Saved Successfully", { status: 201 });
   } catch (error) {
     console.log(error.message);

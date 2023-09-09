@@ -2,11 +2,12 @@ import { Schema, model, models } from "mongoose";
 
 const OrderSchema = new Schema({
   name: String,
-  address: String,
-  itemName: String,
+  add: String,
+  foodItem: String,
   quantity: Number,
-  phoneNumber: Number,
+  number: Number,
   price: Number,
+  userId:String,
 });
 
 const Order = models.Order || model("Order", OrderSchema);

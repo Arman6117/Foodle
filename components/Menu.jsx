@@ -39,6 +39,7 @@ const Menu = () => {
             <MenuCard foodItem="Chicken Fry" foodItemPrice={120} />
             <MenuCard foodItem="Grill Sandwich" foodItemPrice={109} />
             <MenuCard foodItem="Noddle's Ramen" foodItemPrice={119} />
+            {/* <MenuCard foodItem="Burger" foodItemPrice={149} /> */}
           </div>
         </div>
       </div>
