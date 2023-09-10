@@ -8,6 +8,7 @@ const OrderSchema = new Schema({
   number: Number,
   price: Number,
   userId:String,
+  date:String
 });
 
 const Order = models.Order || model("Order", OrderSchema);

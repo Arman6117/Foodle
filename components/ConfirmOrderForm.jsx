@@ -23,6 +23,7 @@ const ConfirmOrderForm = () => {
     e.preventDefault();
     setSubmit(true);
     try {
+      const date = new Date();
       await fetch(`/api/buy-now`, {
         method: "POST",
         headers: {
@@ -36,6 +37,7 @@ const ConfirmOrderForm = () => {
           number,
           price,
           userId,
+          date,
         }),
       });
 
