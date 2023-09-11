@@ -2,35 +2,29 @@
 import { ArrowLeftIcon } from "@heroicons/react/outline";
 import React from "react";
 import { useRouter } from "next/navigation";
-import { useUser } from "@clerk/nextjs";
+import { useUser, SignOutButton } from "@clerk/nextjs";
 import Image from "next/image";
 const Profile = () => {
   const router = useRouter();
-  const {user} = useUser();
+  const { user } = useUser();
   return (
     <div>
-      <div className="h-screen w-screen flex items-center justify-center bg-lightRed">
-        <div className="h-[90%] w-[90%] bg-white rounded-md shadow-2xl p-5">
-          <div className="flex space-x-7 ">
+      <div className="flex bg-lightRed/30 p-1  justify-center sm:justify-normal sm:p-0 sm:h-screen ">
+        <div className="border-gray-400 sm:border-none w-[90%] sm:w-[30%] sm:bg-redPrimary border-b-2 p-2">
+          <div className="flex justify-between ">
             <ArrowLeftIcon
-              className="text-gray-500 h-8 cursor-pointer"
+              className="text-gray-500 sm:text-gray-100 h-8 cursor-pointer"
               onClick={() => {
                 router.push("/");
               }}
             />
-            <span className="font-black text-2xl">My Account</span>
+            <div className="bg-redPrimary p-1 w-20 flex justify-center rounded-md text-white font-semibold hover:bg-redPrimary/50 transition-all hover:text-black ">
+              <SignOutButton />
+            </div>
+            {/* <span className="font-black text-2xl">My Account</span> */}
           </div>
           <div className="flex">
-            <div className="">
-            <Image
-              src={user.profileImageUrl}
-              width={40}
-              height={40}
-              alt=""
-              className="object-contain rounded-full -mt-3 sm:-mt-16 cursor-pointer "
-              onClick={() => router.push("/profile")}
-            />
-            </div>
+            <div className=""></div>
           </div>
         </div>
       </div>

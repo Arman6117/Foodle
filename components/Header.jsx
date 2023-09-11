@@ -18,9 +18,9 @@ const Header = () => {
         <HeaderLinks path="/Menu" link="Menu" />
         <HeaderLinks path="/About" link="About" />
       </div>
-      <div className="flex mr-5 gap-x-10 relative z-[1]">
+      <div className="flex mr-5 space-x-2 relative z-[1]">
         {!isSignedIn || !isLoaded ? (
-          <div className="mr-1">
+          <div className="mr-1 flex space-x-10">
             <button
               className="text-red/60 hover:text-red transition"
               onClick={() => router.push("/login")}
