@@ -1,5 +1,5 @@
 "use client";
-import { ArrowLeftIcon } from "@heroicons/react/outline";
+import { ArrowCircleRightIcon, ArrowLeftIcon } from "@heroicons/react/outline";
 import React from "react";
 import { useRouter } from "next/navigation";
 import { useUser, SignOutButton } from "@clerk/nextjs";
@@ -7,15 +7,13 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import useFoodItemStore from "@/utils/store";
 import { createApi } from "unsplash-js";
+import OrderCard from "./OrderCard";
 const Profile = () => {
   const router = useRouter();
   const { user } = useUser();
   const id = user?.id;
   const [orders, setOrders] = useState([]);
-  const api = createApi({
-    accessKey: "vH7g7qaMV-VUwPZfulmtc0UKU7PXSBPPAs3cpXWDkZE",
-  });
-  const [foodItem,setFoodItem] = useState('')
+
   useEffect(() => {
     const fetchOrders = async () => {
       const response = await fetch(`/api/orders/${id}`);
@@ -27,30 +25,6 @@ const Profile = () => {
     if (id) fetchOrders();
   }, [id]);
 
-  useEffect(() => {
-    const fetchPhotos = async () => {
-      try {
-        const imgData = await api.search.getPhotos({
-          query: foodItem,
-          orientation: "squarish",
-        });
-        const image = imgData.response.results[0].urls.regular;
-
-        const foodItemDetails = {
-          image,
-          foodItemName: foodItem,
-          price: foodItemPrice,
-        };
-
-        saveToDatabase(foodItemDetails);
-        setData(imgData.response.results[0]);
-      } catch (error) {
-        console.log(error.message);
-      }
-    };
-
-    fetchPhotos();
-  }, [foodItem]);
   return (
     <div>
       <div className="flex bg-lightRed/30 p-1  justify-center sm:justify-normal sm:p-0 sm:h-screen  ">
@@ -62,13 +36,13 @@ const Profile = () => {
                 router.push("/");
               }}
             />
-            <div className="mt-14 hidden sm:inline space-y-5 ">
+            <div className="mt-9 hidden sm:inline space-y-5 ">
               <Image
                 src={user?.profileImageUrl}
                 width={130}
                 height={130}
                 alt="profile image"
-                className="object-contain rounded-full sm:h-[180px] sm:w-[180px] cursor-pointer "
+                className="object-contain rounded-full md:h-[180px] md:w-[180px] sm:h-[150px] sm:w-[150px] cursor-pointer "
                 onClick={() => router.push("/profile")}
               />
               <h1 className="ml-10 text-white font-semibold text-xl">
@@ -80,18 +54,22 @@ const Profile = () => {
               {/* <button>Sign Out</button> */}
             </div>
           </div>
-          <div className="flex space-y-6">
-            {orders.map((order) => (
-              
-              <div className="" key={order._id}>
-                <div>
-                
-                </div>
-                <div></div>
-              </div>
-            ))}
-          </div>
         </div>
+        <div className="flex p-4 flex-col hidden sm:inline ">
+          <h1 className=" ml-7 mt-16 font-bold text-4xl">Your Orders</h1>
+
+          {orders.map((order) => (
+            <OrderCard orderId={order._id} key={order._id} foodName={order.foodItem} date={order.date} price={order.price} img={order.img}/>
+          ))}
+        </div>
+      </div>
+      <div className="flex p-4 flex-col  sm:hidden ">
+        <h1 className=" mt-16 font-bold text-4xl ml-6">Your Orders</h1>
+
+        {orders.map((order) => (
+          <OrderCard orderId={order._id} key={order._id} foodName={order.foodItem} date={order.date} price={order.price} img={order.img}/>
+          
+        ))}
       </div>
     </div>
   );

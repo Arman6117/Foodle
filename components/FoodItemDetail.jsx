@@ -13,6 +13,7 @@ const FoodItemDetail = () => {
   const setPrice = useFoodItemStore((state) => state.setFoodPrice);
   const setQuantity = useFoodItemStore((state)=>state.setFoodQuantity);
   const quantity = state.foodQuantity
+  // console.log(foodItem);
   const [currentPrice, setCurrentPrice] = useState(originalPrice);
   return (
     <div className="flex flex-col p-4 sm:items-center  sm:text-center  sm:mt-12">

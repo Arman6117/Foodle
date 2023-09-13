@@ -15,15 +15,19 @@ const ConfirmOrderForm = () => {
   const [number, setNo] = useState(null);
   const quantity = state.foodQuantity;
   const foodItem = state.foodName;
+  const img = state.foodItem;
   const [submit, setSubmit] = useState(false);
   const { user } = useUser();
-  const userId = user.id;
+  const userId = user?.id;
   const router = useRouter();
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmit(true);
     try {
-      const date = new Date();
+      const day = new Date().getDate();
+      const month = new Date().getMonth();
+      const year = new Date().getFullYear();
+      const date = `${day}-${month}-${year}`;
       await fetch(`/api/buy-now`, {
         method: "POST",
         headers: {
@@ -38,6 +42,7 @@ const ConfirmOrderForm = () => {
           price,
           userId,
           date,
+          img
         }),
       });
 
