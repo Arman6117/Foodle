@@ -7,7 +7,7 @@ const HeaderLinks = ({ path, link }) => {
       <span className="h-[3px] rounded w-0 bg-redPrimary group-hover:w-5 transition-all ease-in-out  mt-[21px] absolute " />
       <Link
         className="text-black/60 z-10 font-semibold group-hover:text-black "
-        href={path}
+        // href={path}
       >
         {link}
       </Link>
