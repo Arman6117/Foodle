@@ -3,9 +3,19 @@ import { ArrowCircleRightIcon } from "@heroicons/react/outline";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React from "react";
-
-const OrderCard = ({ img, key, foodName, date, price,orderId }) => {
+import useFoodItemStore from "@/utils/store";
+const OrderCard = ({ img, key, foodName, date, price,orderId,quantity,number,address,name }) => {
     const router = useRouter();
+    const state = useFoodItemStore();
+    const setImg = state.setFoodItem;
+    const setName = state.setFoodName;
+    const setPrice = state.setFoodPrice;
+    const setQuantity = state.setFoodQuantity;
+    const setNumber = state.setNumber;
+    const setDate = state.setDate;
+    const setAdd = state.setAdd;
+    const setCusName = state.setCusName;
+    const setId = state.setOrderId
     // const order_id = key
   return (
     <div
@@ -35,6 +45,15 @@ const OrderCard = ({ img, key, foodName, date, price,orderId }) => {
             <div className="border-white border-[1.5px] rotate-90 w-[25px] relative top-2 left-[28px] opacity-0 group-hover:opacity-100 transition-all" />
           </div>
           <ArrowCircleRightIcon className="h-9 cursor-pointer text-white   " onClick={()=>{
+            setImg(img);
+            setName(foodName);
+            setPrice(price);
+            setQuantity(quantity);
+            setNumber(number);
+            setAdd(address);
+            setDate(date)
+            setCusName(name)
+            setId(orderId)
             router.push(`order/${orderId}`)
           }} />
         </div>

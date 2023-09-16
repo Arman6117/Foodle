@@ -11,7 +11,7 @@ const page = () => {
   return (
     <div className="bg-lightRed h-screen overflow-hidden  ">
      
-      <div className="h-screen  justify-center items-center flex">
+    <div className="h-screen  justify-center items-center flex">
       
         <div className=" h-[80%] z-10 w-[70%] rounded-md  shadow-2xl flex flex-col sm:flex-row ">
 

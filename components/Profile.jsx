@@ -2,7 +2,7 @@
 import { ArrowCircleRightIcon, ArrowLeftIcon } from "@heroicons/react/outline";
 import React from "react";
 import { useRouter } from "next/navigation";
-import { useUser, SignOutButton } from "@clerk/nextjs";
+import { useUser, useClerk } from "@clerk/nextjs";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import useFoodItemStore from "@/utils/store";
@@ -13,7 +13,7 @@ const Profile = () => {
   const { user } = useUser();
   const id = user?.id;
   const [orders, setOrders] = useState([]);
-
+  const { signOut } = useClerk();
   useEffect(() => {
     const fetchOrders = async () => {
       const response = await fetch(`/api/orders/${id}`);
@@ -24,7 +24,10 @@ const Profile = () => {
 
     if (id) fetchOrders();
   }, [id]);
-
+  const handleSignOut = async () => {
+    await signOut();
+    router.push("/");
+  };
   return (
     <div>
       <div className="flex bg-lightRed/30 p-1  justify-center sm:justify-normal sm:p-0 sm:h-screen  ">
@@ -50,8 +53,7 @@ const Profile = () => {
               </h1>
             </div>
             <div className="bg-redPrimary sm:bg-white p-1 w-20 flex justify-center rounded-md text-white font-semibold sm:text-black  sm:hover:border-2 sm:hover:border-white sm:hover:bg-redPrimary sm:hover:text-white transition-all hover:text-black sm:mt-14">
-              <SignOutButton />
-              {/* <button>Sign Out</button> */}
+              <button onClick={handleSignOut}>Sign Out</button>
             </div>
           </div>
         </div>
@@ -59,7 +61,18 @@ const Profile = () => {
           <h1 className=" ml-7 mt-16 font-bold text-4xl">Your Orders</h1>
 
           {orders.map((order) => (
-            <OrderCard orderId={order._id} key={order._id} foodName={order.foodItem} date={order.date} price={order.price} img={order.img}/>
+            <OrderCard
+              orderId={order._id}
+              key={order._id}
+              foodName={order.foodItem}
+              date={order.date}
+              price={order.price}
+              img={order.img}
+              quantity={order.quantity}
+              number={order.number}
+              address={order.add}
+              name={order.name}
+            />
           ))}
         </div>
       </div>
@@ -67,8 +80,18 @@ const Profile = () => {
         <h1 className=" mt-16 font-bold text-4xl ml-6">Your Orders</h1>
 
         {orders.map((order) => (
-          <OrderCard orderId={order._id} key={order._id} foodName={order.foodItem} date={order.date} price={order.price} img={order.img}/>
-          
+          <OrderCard
+            orderId={order._id}
+            key={order._id}
+            foodName={order.foodItem}
+            date={order.date}
+            price={order.price}
+            img={order.img}
+            quantity={order.quantity}
+            number={order.number}
+            address={order.add}
+            name={order.name}
+          />
         ))}
       </div>
     </div>

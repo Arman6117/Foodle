@@ -54,6 +54,7 @@ const ConfirmOrderForm = () => {
       });
       setTimeout(() => {
         push();
+        
       }, 4000);
     } catch (error) {
       console.log(error.message);

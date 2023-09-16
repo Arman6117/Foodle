@@ -12,3 +12,16 @@ export const GET = async (request, { params }) => {
     return new Response("Failed to fetch orders", { status: 500 });
   }
 };
+
+export const DELETE = async(request,{params})=>{
+  try {
+    await connectDb();
+
+    await Order.findOneAndRemove(params.id);
+    
+    return new Response("Order deleted successfully", { status: 200 });
+  } catch (error) {
+    return new Response("Failed to fetch orders", { status: 500 });
+  }
+}
+
