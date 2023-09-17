@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { createApi } from "unsplash-js";
 import { useRouter } from "next/navigation";
 import useFoodItemStore from "@/utils/store";
+import { useUser } from "@clerk/nextjs";
 // import {useFoodItemStore} from '../utils/store'
 const api = createApi({
   accessKey: "vH7g7qaMV-VUwPZfulmtc0UKU7PXSBPPAs3cpXWDkZE",
@@ -41,24 +42,24 @@ const MenuCard = ({ foodItem, foodItemPrice }) => {
 
   const saveToDatabase = async (foodItemDetails) => {
     try {
-    
-        await fetch("/api/menuCards", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(foodItemDetails),
-        });
-      
+      await fetch("/api/menuCards", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(foodItemDetails),
+      });
     } catch (error) {
       console.log(error.message);
     }
   };
 
   // const state = useFoodItemStore();
-  const setFoodItem = useFoodItemStore((state)=>state.setFoodItem);
-  const setFoodName = useFoodItemStore((state)=>state.setFoodName);
-  const setFoodPrice = useFoodItemStore((state)=>state.setFoodPrice);
+  const setFoodItem = useFoodItemStore((state) => state.setFoodItem);
+  const setFoodName = useFoodItemStore((state) => state.setFoodName);
+  const setFoodPrice = useFoodItemStore((state) => state.setFoodPrice);
+
+  const { isSignedIn } = useUser();
   return (
     <>
       {data === null ? (
@@ -91,14 +92,17 @@ const MenuCard = ({ foodItem, foodItemPrice }) => {
                 <button
                   className="font-semibold text-white mt-4 bg-redPrimary  text-xs rounded-full w-24 h-9"
                   onClick={() => {
-                    setFoodItem(data.urls.regular)
-                    setFoodName(foodItem)
-                    setFoodPrice(foodItemPrice)
-                    router.push(`buy-now/${foodItem}`);
-                    
+                    setFoodItem(data.urls.regular);
+                    setFoodName(foodItem);
+                    setFoodPrice(foodItemPrice);
+                    {
+                      isSignedIn
+                        ? router.push(`buy-now/${foodItem}`)
+                        : router.push(`sign-up`);
+                    }
                   }}
                 >
-                  Buy Now
+                  {isSignedIn ? "Buy Now" : "Sign-Up"}
                 </button>
               </div>
             </div>

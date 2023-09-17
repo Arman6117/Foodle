@@ -11,7 +11,7 @@ const page = () => {
   
  
   return (
-    <main>
+    <main className="overflow-hidden">
       {/* Header */}
       <section className="h-screen w-screen rounded-b-2xl bg-lightRed">
         <div className="   ">

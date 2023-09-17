@@ -19,7 +19,7 @@ const OrderCard = ({ img, key, foodName, date, price,orderId,quantity,number,add
     // const order_id = key
   return (
     <div
-      className="ml-6 p-4 w-11/12 sm:w-[110%] md:w-[120%] bg-redPrimary  flex rounded-md shadow-2xl mt-8 w-"
+      className="ml-0 sm:ml-6 p-4 w-full sm:w-[110%] md:w-[120%] bg-redPrimary  flex rounded-md shadow-2xl mt-8 w-"
       key={key}
     >
       <div className="flex">
@@ -39,7 +39,7 @@ const OrderCard = ({ img, key, foodName, date, price,orderId,quantity,number,add
             Price: {price}
           </h3>
         </div>
-        <div className="relative top-7 sm:left-[30%] left-[18%]  text-center flex flex-col gap-4 group float-right">
+        <div className="relative top-7 sm:left-[30%] left-[10%]  text-center flex flex-col gap-4 group float-right">
           <div className="w-20 bg-white rounded-md opacity-0 group-hover:opacity-100 transition-all">
             <span className="text-sm font-bold mb-4"> All Details</span>
             <div className="border-white border-[1.5px] rotate-90 w-[25px] relative top-2 left-[28px] opacity-0 group-hover:opacity-100 transition-all" />

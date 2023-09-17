@@ -57,7 +57,7 @@ const Profile = () => {
             </div>
           </div>
         </div>
-        <div className="flex p-4 flex-col hidden sm:inline ">
+        <div className="flex p-2 flex-col hidden sm:inline ">
           <h1 className=" ml-7 mt-16 font-bold text-4xl">Your Orders</h1>
 
           {orders.map((order) => (
@@ -76,7 +76,7 @@ const Profile = () => {
           ))}
         </div>
       </div>
-      <div className="flex p-4 flex-col  sm:hidden ">
+      <div className="flex p-1 sm:p-4 flex-col  sm:hidden ">
         <h1 className=" mt-16 font-bold text-4xl ml-6">Your Orders</h1>
 
         {orders.map((order) => (

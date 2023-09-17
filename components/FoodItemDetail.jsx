@@ -29,7 +29,7 @@ const FoodItemDetail = () => {
           {foodName}
         </h1>
         <div>
-          <div className="flex space-x-6 ml-14 sm:ml-0 ">
+          <div className="flex space-x-5 ml-14 sm:ml-0 ">
             <MinusCircleIcon
               className="text-yellow-500  h-10 mt-8 cursor-pointer"
               onClick={() => {

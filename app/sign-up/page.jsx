@@ -10,7 +10,7 @@ const Page = () => {
   
   return (
     <div>
-      <div className="flex items-center justify-center bg-redPrimary h-screen">
+      <div className="flex flex-col items-center justify-center bg-redPrimary h-screen">
         <SignUp appearance={{
           elements:{
             headerTitle:'text-red font-bold text-2xl',
@@ -29,6 +29,9 @@ const Page = () => {
             footerAction:'hidden'
           }
         }} />
+        
+         
+        
       </div>
     </div>
   );

@@ -12,7 +12,7 @@ const page = () => {
      
     <div className="h-screen  justify-center items-center flex">
       
-        <div className=" h-[80%] z-10 w-[70%] rounded-md  shadow-2xl flex flex-col sm:flex-row ">
+        <div className=" h-full z-10 w-full rounded-md  shadow-2xl flex flex-col sm:flex-row ">
 
         <div className="w-full sm:w-2/5 h-1/3 sm:h-full bg-redPrimary  rounded-tl-md rounded-bl-md" > {/*Left section*/}
           <div>

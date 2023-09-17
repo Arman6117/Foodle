@@ -4,8 +4,8 @@ import HeroImage from "../public/assets/Hero_image1.png";
 import { TbArrowLoopRight, TbShoppingBag } from "react-icons/tb/index.esm";
 const Home = () => {
   return (
-    <div className="">
-      <div className="pt-2  px-7 md:px-14 font-baloo flex flex-col gap-12 ">
+    <div className="overflow-hidden">
+      <div className="pt-2   px-7 md:px-14 font-baloo flex flex-col gap-12 ">
         {/* <div className="h-15 w-15 bg-black" /> */}
         <span className="  " />
 
