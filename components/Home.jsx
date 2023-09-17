@@ -28,7 +28,7 @@ const Home = () => {
       <Image
           alt="hero image"
           src={HeroImage}
-          className=" md:h-[500px] xl:h-[700px] h-[430px] z-0 overflow-hidden   object-contain  relative sm:absolute left-64 rotate-3 bottom-48 sm:bottom-20"
+          className=" md:h-[500px] xl:h-[700px] h-[430px] z-0 overflow-x-hidden   object-contain  relative sm:absolute left-64 rotate-3 bottom-48 sm:bottom-20"
         />
     </div>
   );
